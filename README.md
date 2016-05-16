@@ -1,4 +1,4 @@
-# BedWars v1.0
+# BedWars v0.1
 
 # Use at Your own risk!
 Things on this are being changed a lot none of them get tested before they are added so use at your own risk!!!!
