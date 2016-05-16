@@ -69,7 +69,7 @@ class Bedwars extends PluginBase implements Listener {
         //Entity::registerEntity(Villager::class, true);
 
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getLogger()->info($this->prefix.TextFormat::GREEN."BedWars Loaded!");
+        $this->getLogger()->info(TextFormat::GREEN."BedWars Loaded!");
         @mkdir($this->getDataFolder());
         @mkdir($this->getDataFolder()."Arenas");
         @mkdir($this->getDataFolder()."Maps");
@@ -171,7 +171,7 @@ class Bedwars extends PluginBase implements Listener {
     ############################################################################################################
     ############################################################################################################
     ############################################################################################################
-    #################################    ===[EIGENE FUNKTIONEN]===     #########################################
+    #################################    ===[OWN FUNCTIONS]===     #########################################
     ############################################################################################################
     ############################################################################################################
     ############################################################################################################
@@ -277,7 +277,6 @@ class Bedwars extends PluginBase implements Listener {
                     }
                 }
                 if($teamcount >= $teamcount2){
-                    //hinten anhängen
                     array_push($array, $team);
                 } else {
                     array_unshift($array, $team);
