@@ -1,0 +1,12 @@
+name: Bedwars
+version: 1.0
+api: 1.14.0
+main: Epic\Bedwars
+author: EpicSteve33
+website: http://www.kcmcpe.net
+commands:
+    Bedwars:
+        description: Bedwars Main Command
+        aliases: [bw]
+    Start:
+        description: Bedwars Forcestart Command
