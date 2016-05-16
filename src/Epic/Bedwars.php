@@ -1185,7 +1185,7 @@ class Bedwars extends PluginBase implements Listener {
                     if($team != $this->getTeam($player->getNameTag())){
                         if (in_array($team, $this->getAvailableTeams($arena))) {
                             $player->setNameTag($this->getTeamColor($team) . $name);
-                            $player->sendMessage($this->prefix . "Is now on Team: " . TextFormat::GOLD . $team);
+                            $player->sendMessage($this->prefix . "Is now on Team " . TextFormat::GOLD . $team);
 
                             $player->getInventory()->removeItem($item);
                             $player->getInventory()->addItem($item);
@@ -1195,7 +1195,7 @@ class Bedwars extends PluginBase implements Listener {
                             $player->getInventory()->addItem($item);
                         }
                     } else {
-                        $player->sendMessage($this->prefix . "Already in Team: " . TextFormat::GOLD . $team);
+                        $player->sendMessage($this->prefix . "Already in Team " . TextFormat::GOLD . $team);
                         $player->getInventory()->removeItem($item);
                         $player->getInventory()->addItem($item);
                     }
@@ -1383,9 +1383,9 @@ class Bedwars extends PluginBase implements Listener {
                             $this->registerSign = true;
                             $this->registerSignWHO = $name;
                             $this->registerSignArena = $arena;
-                            $sender->sendMessage(TextFormat::GREEN . "Ora Tocca su un piatto!");
+                            $sender->sendMessage(TextFormat::GREEN . "Now Tap on a plate!");
                         } else {
-                            $sender->sendMessage(TextFormat::RED."Arena non esiste!");
+                            $sender->sendMessage(TextFormat::RED."Arena does not exist!");
                         }
                     } else {
                         $sender->sendMessage(TextFormat::RED."/bw regsign <ArenaName>");
@@ -1396,9 +1396,9 @@ class Bedwars extends PluginBase implements Listener {
                         $arena = $args[1];
                         if($this->arenaExists($arena)) {
                             $this->saveMaps($arena);
-                            $sender->sendMessage(TextFormat::GREEN . "Tu hai successo le mappe di scena" . TextFormat::AQUA . $arena . TextFormat::GREEN . " settato!");
+                            $sender->sendMessage(TextFormat::GREEN . "You have successfully saved " . TextFormat::AQUA . $arena . TextFormat::GREEN . " Map!");
                         } else {
-                            $sender->sendMessage(TextFormat::RED."Arena non esiste!");
+                            $sender->sendMessage(TextFormat::RED."Arena does not exist!");
                         }
                     } else {
                         $sender->sendMessage(TextFormat::RED."/bw savemaps <ArenaName>");
@@ -1413,13 +1413,13 @@ class Bedwars extends PluginBase implements Listener {
                         if($teams <= 8){
                             $this->createArena($arena, $teams, $ppt);
                             $this->arena = $arena;
-                            $sender->sendMessage(TextFormat::GREEN . "Tu hai con successo l'Arena " . TextFormat::AQUA . $arena . TextFormat::GREEN . " creato!!");
+                            $sender->sendMessage(TextFormat::GREEN . "You have created Arena " . TextFormat::AQUA . $arena . TextFormat::GREEN . " successfully");
                             $sender->sendMessage(TextFormat::GREEN . "Setup -> /bw help");
                         } else {
                             $sender->sendMessage(TextFormat::RED."Du kannst maximal 8 Teams setzen!");
                         }
                     } else {
-                        $sender->sendMessage(TextFormat::RED."/bw addarena <ArenaName> <Teams> <SpielerProTeam>");
+                        $sender->sendMessage(TextFormat::RED."/bw addarena <ArenaName> <Teams> <PlayerProTeam>");
                     }
                 }
                 elseif(strtolower($args[0]) == "setlobby" && $sender->isOP()){
@@ -1429,11 +1429,11 @@ class Bedwars extends PluginBase implements Listener {
 
                             $this->setLobby($arena, $sender);
 
-                            $sender->sendMessage(TextFormat::GREEN . "Hai hall con successo per l'Arena " . TextFormat::AQUA . $arena . TextFormat::GREEN . " set!");
+                            $sender->sendMessage(TextFormat::GREEN . "Lobby for Arena " . TextFormat::AQUA . $arena . TextFormat::GREEN . " set!");
                             $sender->sendMessage(TextFormat::GREEN . "Setup -> /bw help");
 
                         } else {
-                            $sender->sendMessage(TextFormat::RED."Arena existiert nicht!");
+                            $sender->sendMessage(TextFormat::RED."Arena does not exist!");
                         }
                     } else {
                         $sender->sendMessage(TextFormat::RED."/bw setlobby <ArenaName>");
@@ -1450,17 +1450,17 @@ class Bedwars extends PluginBase implements Listener {
                                 $this->registerBedWHO = $name;
                                 $this->registerBedArena = $arena;
                                 $this->registerBedTeam = $team;
-                                $sender->sendMessage(TextFormat::GREEN . "Ora Tocca su un letto ! Si prega di toccare la metà inferiore che ci possono essere errori altrimenti!");
+                                $sender->sendMessage(TextFormat::GREEN . "Now Tap on a bed! Please touch the bottom half that there may be errors otherwise!");
 
                                 $this->resetArena($arena);
                             } else {
                                 $alleteams = implode(" ", $this->getAllTeams());
 
-                                $sender->sendMessage(TextFormat::RED . "Il Team " . TextFormat::GOLD . $team . TextFormat::RED . " non esiste!");
+                                $sender->sendMessage(TextFormat::RED . "The Team " . TextFormat::GOLD . $team . TextFormat::RED . " does not exist!");
                                 $sender->sendMessage(TextFormat::RED . "Teams: " . $alleteams);
                             }
                         } else {
-                            $sender->sendMessage(TextFormat::RED."Arena non esiste!");
+                            $sender->sendMessage(TextFormat::RED."Arena does not exist!");
                         }
                     } else {
                         $sender->sendMessage(TextFormat::RED."/bw setbed <ArenaName> <Team>");
@@ -1475,18 +1475,18 @@ class Bedwars extends PluginBase implements Listener {
 
                                 $this->setSpawn($arena, $team, $sender);
 
-                                $sender->sendMessage(TextFormat::GREEN . "spawn settato team ".TextFormat::AQUA . $team . TextFormat::GREEN." per Arena " . TextFormat::AQUA . $arena . TextFormat::GREEN . " set!");
+                                $sender->sendMessage(TextFormat::GREEN . "spawn set team ".TextFormat::AQUA . $team . TextFormat::GREEN." for Arena " . TextFormat::AQUA . $arena . TextFormat::GREEN . " set!");
                                 $sender->sendMessage(TextFormat::GREEN . "Setup -> /bw help");
 
                                 $this->resetArena($arena);
                             } else {
                                 $alleteams = implode(" ", $this->getAllTeams());
 
-                                $sender->sendMessage(TextFormat::RED . "Das Team " . TextFormat::GOLD . $team . TextFormat::RED . " existiert nicht!");
+                                $sender->sendMessage(TextFormat::RED . "The Team " . TextFormat::GOLD . $team . TextFormat::RED . " does not exist!");
                                 $sender->sendMessage(TextFormat::RED . "Teams: " . $alleteams);
                             }
                         } else {
-                            $sender->sendMessage(TextFormat::RED."Arena existiert nicht!");
+                            $sender->sendMessage(TextFormat::RED."Arena does not exist!");
                         }
                     } else {
                         $sender->sendMessage(TextFormat::RED."/bw setspawn <ArenaName> <Team>");
@@ -1543,13 +1543,13 @@ class BWRefreshSigns extends PluginTask {
                     $ppt = (int) $config->get("PlayersPerTeam");
 
                     $maxplayers = $teams * $ppt;
-                    $ingame = TextFormat::GREEN."Betreten";
+                    $ingame = TextFormat::GREEN."To Enter";
 
                     if ($status != "Lobby") {
                         $ingame = TextFormat::RED . "Ingame";
                     }
                     if (count($players) >= $maxplayers) {
-                        $ingame = TextFormat::RED . "Voll";
+                        $ingame = TextFormat::RED . "Full";
                     }
                     if ($status == "Ende") {
                         $ingame = TextFormat::RED . "Restart";
@@ -1617,7 +1617,7 @@ class BWGameSender extends PluginTask {
                         foreach($players as $pn){
                             $p = $this->plugin->getServer()->getPlayerExact($pn);
                             if($p != null) {
-                                $p->sendPopup(TextFormat::RED . "attesa ".TextFormat::GOLD.$minplayers.TextFormat::RED." abbandonato");
+                                $p->sendPopup(TextFormat::RED . "waiting ".TextFormat::GOLD.$minplayers.TextFormat::RED." Required");
                             } else {
                                 $this->plugin->removePlayerFromArena($arena, $pn);
                             }
@@ -1627,7 +1627,7 @@ class BWGameSender extends PluginTask {
                             foreach($players as $pn){
                                 $p = $this->plugin->getServer()->getPlayerExact($pn);
                                 if($p != null) {
-                                    $p->sendMessage(TextFormat::GOLD . $minplayers . TextFormat::RED ." Un altro giocatore mancante");
+                                    $p->sendMessage(TextFormat::GOLD . $minplayers . TextFormat::RED ." Another player missing");
                                 } else {
                                     $this->plugin->removePlayerFromArena($arena, $pn);
                                 }
@@ -1648,7 +1648,7 @@ class BWGameSender extends PluginTask {
                             foreach($players as $pn){
                                 $p = $this->plugin->getServer()->getPlayerExact($pn);
                                 if($p != null){
-                                    $p->sendMessage($this->prefix."inizio in  ".$lobbytimer." secondi!");
+                                    $p->sendMessage($this->prefix."Starting in  ".$lobbytimer." seconds!");
                                 }
                             }
                         }
@@ -1656,7 +1656,7 @@ class BWGameSender extends PluginTask {
                             foreach($players as $pn){
                                 $p = $this->plugin->getServer()->getPlayerExact($pn);
                                 if($p != null){
-                                    $p->sendPopup(TextFormat::YELLOW."Noch ".TextFormat::RED.$lobbytimer);
+                                    $p->sendPopup(TextFormat::YELLOW."Still ".TextFormat::RED.$lobbytimer);
                                 } else {
                                     $this->plugin->removePlayerFromArena($arena, $pn);
                                 }
@@ -1700,7 +1700,7 @@ class BWGameSender extends PluginTask {
                     if(count($aliveTeams) <= 1){
                         if(count($aliveTeams) == 1){
                             $winnerteam = $aliveTeams[0];
-                            $this->plugin->getServer()->broadcastMessage($this->prefix."Team ".TextFormat::GOLD.$winnerteam.TextFormat::WHITE." Ha la Bedwars rotonda in Arena ".TextFormat::GOLD.$arena.TextFormat::WHITE." win!");
+                            $this->plugin->getServer()->broadcastMessage($this->prefix."Team ".TextFormat::GOLD.$winnerteam.TextFormat::WHITE." Has won Bedwars in Arena ".TextFormat::GOLD.$arena.TextFormat::WHITE." ");
                         }
                         $config->set("Status", "Ende");
                         $config->save();
@@ -1772,7 +1772,7 @@ class BWGameSender extends PluginTask {
                             foreach($players as $pn){
                                 $p = $this->plugin->getServer()->getPlayerExact($pn);
                                 if($p != null){
-                                    $p->sendMessage($this->plugin->prefix.$gametimer/60 . " Minuti");
+                                    $p->sendMessage($this->plugin->prefix.$gametimer/60 . " Minutes");
                                 } else {
                                     $this->plugin->removePlayerFromArena($arena, $pn);
                                 }
@@ -1782,7 +1782,7 @@ class BWGameSender extends PluginTask {
                             foreach($players as $pn){
                                 $p = $this->plugin->getServer()->getPlayerExact($pn);
                                 if($p != null){
-                                    $p->sendMessage($this->plugin->prefix.$gametimer . " sekunden übrig");
+                                    $p->sendMessage($this->plugin->prefix.$gametimer . " seconds left");
                                 } else {
                                     $this->plugin->removePlayerFromArena($arena, $pn);
                                 }
@@ -1792,7 +1792,7 @@ class BWGameSender extends PluginTask {
                             foreach($players as $pn){
                                 $p = $this->plugin->getServer()->getPlayerExact($pn);
                                 if($p != null){
-                                    $p->sendMessage($this->plugin->prefix."1 sekunde übrig");
+                                    $p->sendMessage($this->plugin->prefix."1 second left");
                                 } else {
                                     $this->plugin->removePlayerFromArena($arena, $pn);
                                 }
@@ -1802,9 +1802,9 @@ class BWGameSender extends PluginTask {
                             foreach($players as $pn){
                                 $p = $this->plugin->getServer()->getPlayerExact($pn);
                                 if($p != null){
-                                    $p->sendMessage($this->plugin->prefix."Deathmatch startet!");
+                                    $p->sendMessage($this->plugin->prefix."Deathmatch started!");
 
-                                    $p->sendMessage($this->plugin->prefix."Es gab keinen Gewinner!");
+                                    $p->sendMessage($this->plugin->prefix."There was no winner!");
                                     $config->set($arena."Status", "Ende");
                                     $config->save();
                                 } else {
@@ -1832,7 +1832,7 @@ class BWGameSender extends PluginTask {
                             foreach($players as $pn){
                                 $p = $this->plugin->getServer()->getPlayerExact($pn);
                                 if($p != null){
-                                    $p->sendMessage($this->plugin->prefix."Arena restartet in ".$endtimer." Sekunden !");
+                                    $p->sendMessage($this->plugin->prefix."Arena restarts in ".$endtimer." Seconds!");
                                 } else {
                                     $this->plugin->removePlayerFromArena($arena, $pn);
                                 }
