@@ -7,7 +7,9 @@ Things on this are being changed a lot none of them get tested before they are a
 This plugin is not running on our server yet
 
 # Authors
->**EpicSteve33**
+>Original Author: BluPlayz
+>
+>EpicSteve33
 >
 >EnderPE
 
