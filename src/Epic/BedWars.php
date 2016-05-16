@@ -69,7 +69,7 @@ class Bedwars extends PluginBase implements Listener {
         //Entity::registerEntity(Villager::class, true);
 
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getLogger()->info($this->prefix.TextFormat::GREEN."Plugin wurde Erfolgreich Aktiviert!");
+        $this->getLogger()->info($this->prefix.TextFormat::GREEN."BedWars Loaded!");
         @mkdir($this->getDataFolder());
         @mkdir($this->getDataFolder()."Arenas");
         @mkdir($this->getDataFolder()."Maps");
