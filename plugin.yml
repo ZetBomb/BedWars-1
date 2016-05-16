@@ -1,8 +1,9 @@
 name: Bedwars
-version: 1.0
-api: 1.14.0
+version: 0.1
+api: 1.15.0
 main: Epic\Bedwars
 author: EpicSteve33
+OriginalAuthor: BluPlayz
 website: http://www.kcmcpe.net
 commands:
     Bedwars:
