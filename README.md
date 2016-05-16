@@ -15,7 +15,7 @@ This plugin is not running on our server yet
 
 # Commands:
 
-**/BedWars** Displays all of the possible commands!
+**/BedWars or /BW** Displays all of the possible commands!
 
 # Contact Info
 
@@ -34,4 +34,6 @@ This plugin has not been tested, if you run into this problem please make sure y
 # Todo list
 
 - [ ] Make plugin work/work better
-- [ ] Test it
+- [ ] Fix Grammer Issues
+- [x] Test it (This Plugin Was Tested on ImagicalMine Only)
+- [x] TransLate
