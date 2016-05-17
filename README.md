@@ -1,7 +1,7 @@
 # BedWars v0.1
 
 # Use at Your own risk!
-Things on this are being changed a lot none of them get tested before they are added so use at your own risk!!!!
+This plugin may not work on Genisys, The code work on ImagicalMine, Has never been tested on other pm versions!
 
 # Test Server!
 This plugin is not running on our server yet
@@ -35,5 +35,6 @@ This plugin has not been tested, if you run into this problem please make sure y
 
 - [ ] Make plugin work/work better
 - [ ] Fix Grammer Issues
+- [ ] Make Stable Genisys Version
 - [x] Test it (This Plugin Was Tested on ImagicalMine Only)
-- [x] TransLate
+- [x] Translate %100
